@@ -1,0 +1,8 @@
+<div class="ps-5 p-3">
+  <h2>New bookmark</h2>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+      <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select1' } %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+</div>

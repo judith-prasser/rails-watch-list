@@ -1,0 +1,11 @@
+<div class="ps-5 p-3">
+  <h2><%= @list.name %></h2>
+  <ul>
+    <% @list.bookmarks.each do |bookmark| %>
+      <% movie = Movie.find(bookmark.movie_id)%>
+      <li><img class="img-circle" src="<%= movie.poster_url%>" alt="<%= movie.title %> poster"> <strong><%= movie.title %></strong>: <%= bookmark.comment %></li>
+    <% end %>
+  </ul>
+  <p><%= link_to "Add new bookmark", new_list_bookmark_path(@list) %></p>
+  <p class="p5"><%= link_to "Back to your lists", lists_path %></p>
+</div>
